@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: DealService
+  name: DealService
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: DealService
+  template:
+    metadata:
+      labels:
+        app: DealService
+    spec:
+      containers:
+      - name: DealService
+        image: {Docker Image Name}/DealService
+        ports:
+          - containerPort: 8588
+        env:
+          
